@@ -1,0 +1,219 @@
+/* Astral-SMP Global Styles */
+
+:root {
+  /* Color Palette */
+  --color-bg-deep: #0f0f4d; /* 宇宙・深夜 */
+  --color-bg-dark: #05051a; /* より深い闇 */
+  --color-text-main: #ffffff;
+  --color-text-sub: #ccccff;
+  --color-accent: #4d4dff; /* Neon Blue */
+  --color-accent-glow: rgba(77, 77, 255, 0.6);
+  --color-glass: rgba(15, 15, 77, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Fonts */
+  --font-main: 'Outfit', 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+
+  /* UI */
+  --header-height: 80px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+}
+
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: url('../assets/images/home_bg.png'); /* Fallback / Base texture */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h1 { font-size: 3.5rem; letter-spacing: -0.02em; }
+h2 { font-size: 2.5rem; color: var(--color-text-main); text-shadow: 0 0 20px var(--color-accent-glow); }
+h3 { font-size: 1.5rem; }
+
+/* Utilities */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, #b3b3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navigation */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.main-header.scrolled {
+  background-color: var(--color-glass);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-glass-border);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--color-text-main);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-item {
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.nav-item:hover, .nav-item.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-accent);
+  box-shadow: 0 0 15px var(--color-accent-glow);
+}
+
+/* Footer */
+.main-footer {
+  background: rgba(0, 0, 0, 0.4);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  border-top: 1px solid var(--color-glass-border);
+}
+
+.footer-social {
+  margin-bottom: var(--space-lg);
+}
+
+.social-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-sub);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  fill: var(--color-text-main);
+  transition: transform 0.3s, fill 0.3s;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  fill: var(--color-accent);
+}
+
+.copyright {
+  color: var(--color-text-sub);
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  
+  .nav-links {
+    gap: var(--space-sm);
+  }
+  
+  .nav-item {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History | Astral-SMP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* History Specific Styles */
+        .page-header {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 100px auto;
+            padding: 20px;
+        }
+
+        /* Vertical Line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    transparent 0%,
+                    var(--color-accent) 15%,
+                    var(--color-accent) 85%,
+                    transparent 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .timeline-content {
+            background: var(--color-glass);
+            border: 1px solid var(--color-glass-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            width: 45%;
+            position: relative;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 20px rgba(77, 77, 255, 0.2);
+        }
+
+        /* Dot on the line */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 24px;
+            width: 16px;
+            height: 16px;
+            background: var(--color-bg-deep);
+            border: 2px solid var(--color-accent);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            box-shadow: 0 0 10px var(--color-accent);
+        }
+
+        /* Alternating layout */
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
+        }
+
+        /* Connecting lines */
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 30px;
+            width: 20px;
+            height: 1px;
+            background: var(--color-glass-border);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 30px;
+            width: 20px;
+            height: 1px;
+            background: var(--color-glass-border);
+        }
+
+        .timeline-date {
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline-image {
+            width: 100%;
+            border-radius: var(--radius-md);
+            margin-top: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                justify-content: flex-end;
+                /* Always align right */
+                padding-left: 40px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-item::after {
+                left: 20px;
+                /* Align dot to left line */
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -20px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo">Astral-SMP</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">Home</a></li>
+                    <li><a href="contents.html" class="nav-item">Contents</a></li>
+                    <li><a href="history.html" class="nav-item active">History</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+        <header class="page-header fade-trigger">
+            <h1 class="text-gradient animate-in">Server History</h1>
+            <p class="animate-in delay-1">The chronicle of our journey across the stars.</p>
+        </header>
+
+        <div class="timeline">
+            <!-- Event 1 -->
+            <div class="timeline-item fade-trigger">
+                <div class="timeline-content">
+                    <span class="timeline-date">2023.11.01</span>
+                    <h3 class="timeline-title">Project Start</h3>
+                    <p>Astral-SMPの構想が始動。コアメンバーによるサーバー構築と世界観の設定がこの日に決定されました。</p>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="timeline-item fade-trigger">
+                <div class="timeline-content">
+                    <span class="timeline-date">2024.01.15</span>
+                    <h3 class="timeline-title">Beta Access Opened</h3>
+                    <img src="assets/images/history/placeholder.png" alt="Beta Launch" class="timeline-image">
+                    <p>限定されたプレイヤーによるベータテストを開始。多くのバグ修正とバランス調整が行われました。</p>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="timeline-item fade-trigger">
+                <div class="timeline-content">
+                    <span class="timeline-date">2024.04.01</span>
+                    <h3 class="timeline-title">Grand Opening</h3>
+                    <p>正式サービス開始。YouTubeでのプロモーションムービー公開と共に、多くのプレイヤーが参加しました。</p>
+                </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="timeline-item fade-trigger">
+                <div class="timeline-content">
+                    <span class="timeline-date">2025.12.15</span>
+                    <h3 class="timeline-title">Website Renewal</h3>
+                    <img src="assets/images/history/placeholder.png" alt="New Website" class="timeline-image">
+                    <p>公式ウェブサイトを全面リニューアル。より美しく、使いやすい情報発信の場として生まれ変わりました。</p>
+                </div>
+            </div>
+
+            <!-- 新しい履歴を追加する場合はここへ -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer fade-trigger">
+        <div class="container">
+            <div class="footer-social">
+                <h3 class="social-title">Social</h3>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@ASTRAL-SMP" target="_blank" class="social-icon">
+                        <img src="assets/icons/youtube.svg" alt="YouTube">
+                    </a>
+                    <a href="https://x.com/ASTRALSMPJP" target="_blank" class="social-icon">
+                        <img src="assets/icons/twitter.svg" alt="X (Twitter)">
+                    </a>
+                    <a href="https://discord.gg/vA5nXAV3Xp" target="_blank" class="social-icon">
+                        <img src="assets/icons/discord.svg" alt="Discord">
+                    </a>
+                </div>
+            </div>
+            <p class="copyright">&copy; Astral-SMP 2025</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
