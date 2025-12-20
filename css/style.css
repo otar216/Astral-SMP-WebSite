@@ -445,8 +445,8 @@ h3 {
   letter-spacing: -0.04em;
   color: #ffffff;
   /* Solid white for clarity */
-  /* Sharp shadow for definition + subtle blue glow */
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 0 30px rgba(77, 77, 255, 0.4);
+  /* Sharp shadow for definition, removed blue glow for pure white look */
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
   opacity: 0;
   animation: titleAppear 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   position: relative;
@@ -532,6 +532,9 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* Horizontally center flex children */
+  text-align: center;
+  /* Center text content */
   height: 100%;
   /* Full height for centering */
 }
@@ -592,33 +595,42 @@ h3 {
 }
 
 /* Hero Button */
+/* Hero Button */
 .hero-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.7);
+  /* Dark background for high contrast */
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  /* Stronger visible border */
   padding: 14px 32px;
   border-radius: 50px;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   font-size: 1.1rem;
   margin-top: 30px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  /* Ensure text readability */
 }
 
 .hero-btn:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.85);
+  border-color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .hero-btn .btn-icon {
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
+  /* Prevent icon shrinking/distorting in some browsers */
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
