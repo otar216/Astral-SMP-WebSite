@@ -439,20 +439,144 @@ h3 {
 /* Hero Title Redesign */
 .hero-title {
   font-size: 7rem;
+  /* Default Desktop */
   font-weight: 900;
   margin-bottom: var(--space-sm);
   letter-spacing: -0.04em;
-  color: #fff;
-  /* Fallback */
-  background: linear-gradient(to bottom, #ffffff 40%, #aaccff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* Add text-shadow as backup visibility */
-  filter: drop-shadow(0 0 20px rgba(77, 77, 255, 0.8));
+  color: #ffffff;
+  /* Solid white for clarity */
+  /* Sharp shadow for definition + subtle blue glow */
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 0 30px rgba(77, 77, 255, 0.4);
   opacity: 0;
-  /* Run animation once (forwards), no infinite loop */
   animation: titleAppear 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 5.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.8rem;
+    letter-spacing: -0.02em;
+  }
+}
+
+
+/* Hero Background Logo */
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* Ensure logo doesn't spill out */
+}
+
+/* Hero Background Logo Wrapper */
+.hero-logo-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  max-width: 800px;
+  transform: translate(-50%, -50%);
+  /* Centering */
+  z-index: 0;
+  pointer-events: none;
+  /* Entry Animation applies to the wrapper */
+  animation: logoWrapperEntry 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes logoWrapperEntry {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-15deg) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
+/* Hero Background Logo Image */
+.hero-bg-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.6;
+  /* Base visibility */
+  filter: drop-shadow(0 0 30px rgba(77, 77, 255, 0.5));
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  transition: opacity 0.1s linear;
+  /* Smooth scroll fade */
+  /* JS controls transform/opacity of this element */
+}
+
+
+/* Ensure content is above logo */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* Full height for centering */
+}
+
+/* Scroll Indicator Fixed at Bottom */
+/* Scroll Indicator Fixed at Bottom */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  /* Ensure visible above overlay */
+}
+
+/* Inner wrapper handles layout and animation */
+.scroll-indicator-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes titleAppear {

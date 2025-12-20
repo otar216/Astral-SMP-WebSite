@@ -31,9 +31,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Apply observer to elements
-    const fadeElements = document.querySelectorAll('.fade-trigger, .scroll-reveal');
-    fadeElements.forEach(el => observer.observe(el));
+    // Parallax Effect for Hero Logo
+    window.addEventListener('scroll', () => {
+        const heroLogo = document.getElementById('heroBgLogo');
+        if (heroLogo) {
+            const scrollValue = window.scrollY;
+            // Only animate if within reasonable range to save performance
+            if (scrollValue < 1000) {
+                // Parallax: Only move vertically and rotate.
+                // Wrapper handles centering.
+                heroLogo.style.transform = `translateY(${scrollValue * 0.4}px) rotate(${scrollValue * 0.05}deg)`;
+                // Fade out as scroll down
+                heroLogo.style.opacity = Math.max(0, 0.4 - (scrollValue / 800)); // Start from 0.4, fade faster
+            }
+        }
+    });
+
+    // Scroll Reveal Animation (Intersection Observer)
+    const revealElements = document.querySelectorAll('.animate-in, .fade-trigger, .scroll-reveal');
+    revealElements.forEach(el => observer.observe(el));
 
     console.log('Astral-SMP System Initialized');
 });
