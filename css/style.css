@@ -149,6 +149,8 @@ h3 {
   letter-spacing: -0.02em;
   transition: opacity 0.3s ease;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  /* Prevent line break on mobile */
 }
 
 .logo-text:hover {
@@ -287,17 +289,30 @@ h3 {
   }
 
   .nav-links {
-    gap: var(--space-sm);
+    gap: 6px;
+    /* Tighter gap */
   }
 
   .nav-item {
-    font-size: 0.9rem;
-    padding: 6px 12px;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    /* Smaller padding */
   }
 
   .logo-text {
-    font-size: 1.8rem;
-    /* Smaller font on mobile */
+    font-size: 1.5rem;
+    /* prevent wrap */
+  }
+}
+
+@media (max-width: 380px) {
+  .logo-text {
+    font-size: 1.3rem;
+  }
+
+  .nav-item {
+    padding: 4px 8px;
+    font-size: 0.75rem;
   }
 }
 
@@ -444,6 +459,10 @@ h3 {
   margin-bottom: var(--space-sm);
   letter-spacing: -0.04em;
   color: #ffffff;
+  /* Override text-gradient class if present */
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+
   /* Solid white for clarity */
   /* Sharp shadow for definition, removed blue glow for pure white look */
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
@@ -594,8 +613,6 @@ h3 {
   }
 }
 
-/* Hero Button */
-/* Hero Button */
 /* Hero Button */
 .hero-btn {
   display: inline-flex;
