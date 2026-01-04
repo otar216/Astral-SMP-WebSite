@@ -305,13 +305,18 @@ h3 {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 500px) {
   .logo-text {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+  }
+
+  .nav-links {
+    gap: 4px;
   }
 
   .nav-item {
-    padding: 4px 8px;
+    padding: 4px 6px;
+    /* Reduced horizontal padding */
     font-size: 0.75rem;
   }
 }
