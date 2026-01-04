@@ -306,18 +306,35 @@ h3 {
 }
 
 @media (max-width: 500px) {
+
+  /* Stack Layout for Mobile Header */
+  .main-header {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .logo-text {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    /* Readable size */
+    margin-bottom: 2px;
   }
 
   .nav-links {
-    gap: 4px;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 
   .nav-item {
-    padding: 4px 6px;
-    /* Reduced horizontal padding */
-    font-size: 0.75rem;
+    padding: 6px 16px;
+    /* Comfortable touch target */
+    font-size: 0.85rem;
   }
 }
 
