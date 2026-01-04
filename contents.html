@@ -7,7 +7,8 @@
     <title>Contents | Astral-SMP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700;900&family=Silkscreen&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -99,7 +100,10 @@
 
             <!-- Content Item -->
             <article class="content-card fade-trigger">
-                <img src="assets/images/contents/slime_deco.png" alt="test" class="card-image">
+                <div class="card-image-wrapper">
+                    <img src="assets/images/contents/slime_deco.png" alt="3M Rocket Looting Slime Farm"
+                        class="card-image">
+                </div>
                 <div class="card-body">
                     <h3 class="card-title">3M Rocket Looting Slime Farm</h3>
                     <p class="card-desc">
@@ -111,7 +115,9 @@
 
             <!-- Content Item -->
             <article class="content-card fade-trigger delay-1">
-                <img src="assets/images/contents/main_storage_deco.png" alt="Main Storage v1.0" class="card-image">
+                <div class="card-image-wrapper">
+                    <img src="assets/images/contents/main_storage_deco.png" alt="Main Storage v1.0" class="card-image">
+                </div>
                 <div class="card-body">
                     <h3 class="card-title">Main Storage v1.0</h3>
                     <p class="card-desc">
@@ -143,6 +149,13 @@
             <p class="copyright">&copy; Astral-SMP 2024-2025. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

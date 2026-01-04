@@ -7,7 +7,8 @@
     <title>Astral-SMP | Official</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700;900&family=Silkscreen&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -176,6 +177,32 @@
                     整った環境で個々人の生活を優先した自由な創造活動を行っています。
                 </p>
 
+                <!-- Screenshot Gallery -->
+                <div class="gallery-container scroll-reveal">
+                    <h3 class="gallery-title">SERVER SNAPSHOTS</h3>
+                    <div class="gallery-scroll">
+                        <div class="gallery-item">
+                            <!-- Example Implementation: Real Image -->
+                            <img src="assets/images/new_year_2026.png" alt="Lobby Area" class="gallery-img">
+                            <div class="gallery-caption">Lobby Area</div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">
+                                <span>NO IMAGE</span>
+                                <small>Replace with<br>Screenshot_02</small>
+                            </div>
+                            <div class="gallery-caption">Main World</div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">
+                                <span>NO IMAGE</span>
+                                <small>Replace with<br>Screenshot_03</small>
+                            </div>
+                            <div class="gallery-caption">Event Hall</div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Specs Grid -->
                 <div class="specs-grid scroll-reveal">
                     <div class="spec-card stagger-1">
@@ -299,6 +326,13 @@
             <p class="copyright">&copy; Astral-SMP 2024-2025. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
