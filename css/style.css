@@ -1,4 +1,14 @@
 /* Astral-SMP Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700;900&display=swap');
+
+/* Custom Font Setup */
+@font-face {
+  font-family: 'HamburgerHeaven';
+  src: url('../assets/fonts/HamburgerHeaven.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Color Palette */
@@ -444,15 +454,22 @@ h3 {
   color: var(--color-text-sub);
   font-weight: 400;
   opacity: 0.8;
-}
-
-.member-bio {
   font-size: 0.95rem;
   color: #ddddff;
-  line-height: 1.5;
-  word-wrap: break-word;
-  /* Ensure line break */
-  overflow-wrap: break-word;
+  line-height: 1;
+  /* Prevent height issues */
+  display: block;
+  /* Ensure transform works */
+  text-decoration: none !important;
+  /* Remove underline */
+}
+
+/* Custom Font Toggle for Header */
+.logo-text.custom-font {
+  font-family: 'HamburgerHeaven', var(--font-main);
+  letter-spacing: 0.05em;
+  font-size: 1.8rem;
+  /* Adjust if font is small */
 }
 
 @media (max-width: 768px) {
@@ -497,18 +514,28 @@ h3 {
   font-weight: 900;
   margin-bottom: var(--space-sm);
   letter-spacing: -0.04em;
-  color: #ffffff;
-  /* Override text-gradient class if present */
+  line-height: 1.1;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  /* Pure White Override */
   background: none;
   -webkit-text-fill-color: #ffffff;
-
+  transition: font-family 0.3s ease;
   /* Solid white for clarity */
   /* Sharp shadow for definition, removed blue glow for pure white look */
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
   opacity: 0;
   animation: titleAppear 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  position: relative;
   z-index: 2;
+}
+
+/* Custom Font Toggle */
+.hero-title.custom-font {
+  font-family: 'HamburgerHeaven', var(--font-main);
+  font-size: 5rem;
+  /* Adjust if needed */
+  letter-spacing: 0.02em;
 }
 
 /* Responsive Font Sizes */

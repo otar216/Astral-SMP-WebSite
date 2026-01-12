@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contents | ASTRAL-SMP</title>
+    <link rel="icon" href="assets/images/ast_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -52,8 +53,15 @@
 
         .card-title {
             font-size: 1.5rem;
-            color: var(--color-accent);
             margin-bottom: 12px;
+            /* Complementary Gold/Orange Gradient */
+            background: linear-gradient(135deg, #ffd700, #ff9900);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            /* Enhanced Legibility Shadow */
+            filter: drop-shadow(0 2px 10px rgba(255, 165, 0, 0.3));
         }
 
         .card-desc {
@@ -76,7 +84,7 @@
     <header class="main-header">
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
-                <span class="logo-text">ASTRAL-SMP</span>
+                <span class="logo-text custom-font">ASTRAL</span>
             </a>
             <nav>
                 <ul class="nav-links">
@@ -121,7 +129,34 @@
                 <div class="card-body">
                     <h3 class="card-title">Main Storage v1.0</h3>
                     <p class="card-desc">
-                        作業の中核を担うメインストレージ。総ブロック数は1000万越えと、世界3位を記録。Astralらしい宇宙船をモチーフにしたDecoであり、倉庫部分の外周にはメンバーの居室が存在する。
+                        作業の中核を担うメインストレージ。総ブロック数は1000万越えと、世界3位を記録。ASTRALらしい宇宙船をモチーフにしたDecoであり、倉庫部分の外周にはメンバーの居室が存在する。
+                    </p>
+                </div>
+            </article>
+
+            <!-- Content Item -->
+            <article class="content-card fade-trigger delay-2">
+                <div class="card-image-wrapper">
+                    <img src="assets/images/contents/gold_deco.png" alt="Gold Farm" class="card-image">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">y0 Gold Farm</h3>
+                    <p class="card-desc">
+                        2×2 chunk の y0 gold farm。suppressionを使わずに制作された。height
+                        mapの都合上、湧き層のガスト対策にエンドクリスタルを用いることが好ましいとされているが、1.19.4ではバグによりマグマキューブが湧いてしまうため仕方なく亀の卵を浮かせている。
+                    </p>
+                </div>
+            </article>
+
+            <!-- Content Item -->
+            <article class="content-card fade-trigger delay-3">
+                <div class="card-image-wrapper">
+                    <img src="assets/images/contents/bartering.png" alt="Bartering Farm" class="card-image">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">864 Bartering Farm</h3>
+                    <p class="card-desc">
+                        864体のピグリンを使ったピグリン交易所。アイテム数にして2.92M/hのアイテムを集めることができ、2026年1月現在、世界1位の効率を記録。ネザークォーツの効率は192k/hである。まさに金が溶ける速度で交易が行われる。
                     </p>
                 </div>
             </article>
