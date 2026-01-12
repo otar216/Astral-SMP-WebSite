@@ -320,13 +320,13 @@ h3 {
 
   .nav-container {
     flex-direction: column;
-    gap: 12px;
+    gap: 0;
+    /* No gap needed */
   }
 
-  .logo-text {
-    font-size: 1.5rem;
-    /* Readable size */
-    margin-bottom: 2px;
+  /* Hide Logo on Mobile */
+  .logo-link {
+    display: none;
   }
 
   .nav-links {
