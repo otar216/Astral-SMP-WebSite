@@ -106,5 +106,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    console.log('Astral-SMP System Initialized');
+    console.log('ASTRAL-SMP System Initialized');
 });
